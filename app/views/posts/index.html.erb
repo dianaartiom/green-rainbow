@@ -1,1 +1,10 @@
+<%= link_to("Create a new post", new_post_path) %>
+
 <h1>Header for posts</h1>
+<ul>
+  <% Post.all.each do |c| %>
+  <li> Post: <%=image_tag(c.image_link) %> </li>
+  <% end %>
+</ul>
+
+
