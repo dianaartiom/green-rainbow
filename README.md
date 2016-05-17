@@ -1,3 +1,4 @@
+
 This application was developed for the purpose of a laboratory work at IDE course, at Technical University of Moldova.
 
 == README
