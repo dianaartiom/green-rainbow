@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  root to: "cases#index"
   resources :posts
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
