@@ -3,7 +3,11 @@
 <h1>Header for posts</h1>
 <ul>
   <% Post.all.each do |c| %>
-  <li> Post: <%=image_tag(c.image_link) %> </li>
+  <li>
+    <p> <%= "Created by: " + c.user.email %> </p>
+    <p> <%= "Post id: " + c.id.to_s %> </p>
+    <p>: <%=image_tag(c.image_link) %> </p>
+  </li>
   <% end %>
 </ul>
 
