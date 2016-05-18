@@ -2,24 +2,22 @@
 <body>
 <section id="wrapper">
 	<section id="bg">
-		<img src="http://www.leadplayer.com/common/free-report/css/images/bg.jpg" alt="" />
+		<%= image_tag("wall.jpg") %>
 	</section>
 	<!-- /#bg -->
 
 	<section class="content-box">
 		<h1 id="logo"><a href="#" class="notext">YOUR LOGO</a></h1>
 		<section class="blackbox">
-			<h2>Top 20 Things That Are Awesome About Awesomeness</h2>
-			<p>Please enter your email address to get this free report</p>
+			<h2>Try the fancy app first</h2>
+			<p>This app was developed for a laboratory work at technical university of Moldova</p>
 			<form action="#">
-				<input type="text" class="field" value="Enter a valid email here" title="Enter a valid email here"/>
-				<input type="submit" class="submit" value="Download the report" />
+				<div class="btn btn-default btn-lg button-text-submit"><span class="network-name"><%= link_to "Go to post", posts_path %></span></div>
 			</form>
-			<p>Your information will *never* be shared or sold to a 3rd party.</p>
 		</section>
 		<!-- /.blackbox -->
 		<footer class="footer">
-			Created By <a href="http://www.MarketingShow.com">The Marketing Show</a>
+			Created By <a href="https://github.com/dianaartiom">Diana Artiom</a>
 		</footer>
 	</section>
 	<!-- /.content-box -->

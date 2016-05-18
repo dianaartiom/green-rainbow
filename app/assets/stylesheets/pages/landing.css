@@ -72,6 +72,7 @@ h1#logo.lead-logo a { width:180px; height:31px; background-image:url(images/lead
 .blackbox { text-align:center; padding-bottom:17px; margin-bottom:11px;  }
 .blackbox h3,
 .blackbox h2 { font-family: 'SegoeUI-SemiBold'; font-size:28px; line-height:28px; color:#fff; font-weight:normal; padding:20px 40px;  letter-spacing:-2px; }
+.blackbox h2 a:hover { text-decoration: none}
 .blackbox h3 { font-size:22px; line-height:26px; padding:12px 30px; }
 .blackbox p { padding-bottom:10px; text-shadow:1px 1px 1px rgba(0,0,0,0.7)  }
 .blackbox form { padding:10px 0 16px;  }

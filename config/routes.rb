@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: "posts#index"
+  root to: "pages#landing"
   resources :posts
   devise_for :users
 
