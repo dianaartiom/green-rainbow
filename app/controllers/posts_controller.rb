@@ -1,6 +1,10 @@
 class PostsController < ApplicationController
   before_filter :authenticate_user!
 
+  def index
+    @post = Post.new
+  end
+
   def create
     @post=Post.create(post_params)
     redirect_to posts_path
@@ -12,16 +16,12 @@ class PostsController < ApplicationController
     params.require(:post).permit!
   end
 
-  def index
-  end
-
   def new
     @post = Post.new
-
   end
 
   def destroy
-    @post = Post.find(params[id])
+    @post = Post.find(params[:id])
     @post.destroy
     redirect_to posts_path
   end
@@ -33,7 +33,8 @@ class PostsController < ApplicationController
   def update
       @post = Post.find(params[:id])
       if @post.update_attributes(case_params)
-          redirect_to posts_path
+          format.html { redirect_to posts_path }
+          format.js
       else
           render 'edit'
       end

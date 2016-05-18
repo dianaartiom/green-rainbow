@@ -1,5 +1,5 @@
 <h1> New Post </h1>
-<%= form_for @post do |form| %>
-<%= form.text_field :image_link, :placeholder => "Post image Url" %>
-<%= form.submit %>
+<%= bootstrap_form_for(@post, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-6") do |form| %>
+  <%= form.text_field :image_link, :placeholder => "Post image Url" %>
+  <%= form.submit %>
 <% end %>

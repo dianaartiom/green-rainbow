@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'bootstrap_form'
+
 gem 'bootstrap-sass'
 
 gem 'devise'
