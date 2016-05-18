@@ -1,11 +1,4 @@
-<h1> Edit Post</h1>
-<%= form_for @post, remote: true do |form| %>
-<%= form.text_field :image_link %>
-<%= form.submit %>
-<% end %>
-
-
-<!-- <div class="col-md-6">
+<div class="col-md-6">
   <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title"><%= "Post id: " +  post.id.to_s %></h3>
@@ -26,17 +19,4 @@
         <% end %>
     </div>
   </div>
-</div> -->
-
-
-
-
-<h1> New Post </h1>
-<%= bootstrap_form_for(@post, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-6") do |form| %>
-  <%= form.text_field :image_link, :placeholder => "Post image Url" %>
-  <%= form.submit %>
-<% end %>
-
-  <%= form.text_area :body, label: "Case description", placeholder: "Enter the description of your post" %>
-  <%= form.submit %>
-<% end %>
+</div>

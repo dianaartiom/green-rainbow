@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'pry'
+
 gem 'bootstrap_form'
 
 gem 'bootstrap-sass'

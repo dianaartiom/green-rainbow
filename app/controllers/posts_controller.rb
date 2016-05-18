@@ -2,14 +2,22 @@ class PostsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @post = Post.new
+    # @post = Post.new
+    @posts = Post.all
   end
 
   def create
+    # binding.pry
     @post=Post.create(post_params)
-    redirect_to posts_path
     @post.user = current_user
     @post.save
+    respond_to do |format|
+      # if the response fomat is html, redirect as usual
+      format.html { redirect_to posts_path }
+
+      # if the response format is javascript, do something else...
+      format.js { }
+    end
   end
 
   def post_params
@@ -23,7 +31,12 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to posts_path
+    respond_to do |format|
+      format.html { redirect_to posts_path }
+      # format.json { head :no_content }
+      format.js { }
+    end
+
   end
 
   def edit
@@ -34,10 +47,17 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
       if @post.update_attributes(case_params)
           format.html { redirect_to posts_path }
-          format.js
+
+          # format.json { :render @post }
       else
           render 'edit'
       end
   end
+
+  private
+
+     def all_posts
+       @tasks = Post.all
+     end
 
 end
