@@ -1,4 +1,20 @@
-<%= render "layouts/_header" %>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Posts</a>
+    </div>
+    <div class="navbar-collapse">
+      <div class="nav navbar-nav">
+        <%=link_to("Create a new post", new_post_path) %>
+      </div>
+      <div class="nav navbar-nav navbar-right">
+        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
 <%= bootstrap_form_for(Post.new, remote: true , layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-6")do |form| %>
   <%= form.text_field :image_link, :placeholder => "Post image Url" %>
   <%= form.submit %>
@@ -6,7 +22,7 @@
 
 <div class="container">
 <h1>Posts</h1>
-<ul>
+<ul id="post-render">
   <%= render @posts %>
 </ul>
 </div>

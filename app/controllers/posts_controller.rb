@@ -3,7 +3,8 @@ class PostsController < ApplicationController
 
   def index
     # @post = Post.new
-    @posts = Post.all
+    @posts = Post.all.order("id DESC")
+
   end
 
   def create
