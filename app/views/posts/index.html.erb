@@ -9,7 +9,7 @@
       </div>
       <div class="nav navbar-nav navbar-right">
         <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-      </ul>
+      </div>
     </div>
   </div>
 </nav>
@@ -21,8 +21,8 @@
 <% end %>
 
 <div class="container">
-<h1>Posts</h1>
-<ul id="post-render">
-  <%= render @posts %>
-</ul>
+  <h1>Posts</h1>
+  <ul id="post-render">
+    <%= render @posts %>
+  </ul>
 </div>

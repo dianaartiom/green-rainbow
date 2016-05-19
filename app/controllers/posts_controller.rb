@@ -17,6 +17,7 @@ class PostsController < ApplicationController
       format.html { redirect_to posts_path }
 
       # if the response format is javascript, do something else...
+
       format.js { }
 
     end
@@ -30,11 +31,14 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  # DELETE /ponies/1
+  # DELETE /ponies/1.json
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
+
     respond_to do |format|
-      format.html { redirect_to posts_path }
+      format.html { redirect_to posts_path, notice: "Post successfully deleted." }
       # format.json { head :no_content }
       format.js { }
     end
@@ -49,8 +53,7 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
       if @post.update_attributes(case_params)
           format.html { redirect_to posts_path }
-
-          # format.json { :render @post }
+          format.json { render :json => @post }
       else
           render 'edit'
       end
