@@ -18,6 +18,7 @@ class PostsController < ApplicationController
 
       # if the response format is javascript, do something else...
       format.js { }
+
     end
   end
 
