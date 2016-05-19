@@ -8,8 +8,8 @@
         <%=link_to("Create a new post", new_post_path) %>
       </div>
       <div class="nav navbar-nav navbar-right">
-        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-      </ul>
+        <%= link_to('Logout', destroy_user_session_path, :method => :delete, remote: true) %>
+      </div>
     </div>
   </div>
 </nav>

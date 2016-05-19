@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   resources :posts
   devise_for :users
 
+  resources :posts do
+    get "delete"
+  end
+
   get "options" => "pages#options"
 
   # The priority is based upon order of creation: first created -> highest priority.
