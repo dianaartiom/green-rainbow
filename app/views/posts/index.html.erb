@@ -8,7 +8,7 @@
         <%=link_to("Create a new post", new_post_path) %>
       </div>
       <div class="nav navbar-nav navbar-right">
-        <%= link_to('Logout', destroy_user_session_path, :method => :delete, remote: true) %>
+        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
       </div>
     </div>
   </div>
@@ -21,8 +21,8 @@
 <% end %>
 
 <div class="container">
-<h1>Posts</h1>
-<ul id="post-render">
-  <%= render @posts %>
-</ul>
+  <h1>Posts</h1>
+  <ul id="post-render">
+    <%= render @posts %>
+  </ul>
 </div>

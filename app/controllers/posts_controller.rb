@@ -52,8 +52,7 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
       if @post.update_attributes(case_params)
           format.html { redirect_to posts_path }
-
-          # format.json { :render @post }
+          format.json { render :json => @post }
       else
           render 'edit'
       end
